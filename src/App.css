@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #fff;
+	display: flex;
+	font-family: "Roboto Condensed", sans-serif;
+	margin: 0 auto;
+	place-content: center;
+	place-items: center;
+}
+.title {
+	color: #333;
+	margin-bottom: 16px;
+	text-align: center;
+}
+h1,
+h2 {
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	margin-top: 8px;
+}
+
+.container {
+	margin: 0 auto;
+	margin-bottom: 32px;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container img {
+	height: 16px;
+}
+
+input {
+	border: 1px #333 solid;
+	border-radius: 8px 0px 0px 8px;
+	padding: 10px;
+	outline: none;
+	border-right: none;
+	text-transform: capitalize;
+}
+
+.onSearchIcon {
+	border: 1px #333 solid;
+	padding: 8px;
+	border-left: none;
+	border-radius: 0px 8px 8px 0px;
+	cursor: pointer;
+}
+.container__weather {
+	align-items: center;
+	display: flex;
+	gap: 8px;
+}
+.temp-img img {
+	width: 50px;
+}
+.temp {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.temp-info {
+	font-weight: bold;
+}
+.loading {
+	margin-top: 16px;
+	width: 100%;
+	text-align: center;
+}
+.container__main {
+	display: grid;
+	gap: 0px 0px;
+	grid-template-areas:
+		"left left right right right"
+		"left left first second third";
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	width: 100%;
+}
+.container__left {
+	display: grid;
+	height: 500px;
+	position: relative;
+	grid-area: left;
+	place-content: center;
+	place-items: center;
+}
+.temp-info {
+	display: block;
+	margin-top: 6px;
+	text-align: center;
+}
+.container__right {
+	display: flex;
+	gap: 48px;
+	grid-area: right;
+	place-items: center;
+	place-content: center;
+}
+.container__right-info,
+.container__weather-wind {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	text-align: center;
+}
+.container__right,
+.first,
+.second,
+.third {
+	text-align: center;
+}
+.first {
+	grid-area: first;
+}
+.second {
+	grid-area: second;
+}
+.third {
+	grid-area: third;
+}
+
+@media screen and (width <= 400px) {
+	.container__main {
+		display: grid;
+		grid-template-areas:
+			"left left left left"
+			"left left left left"
+			"right right right right"
+			"right right right right"
+			"first first second second"
+			"first first second second"
+			"third third third third";
+		grid-template-columns: repeat(4, 1fr) repeat(
+				2,
+				minmax(min-content, max-content)
+			);
+		grid-template-rows: repeat(4, minmax(min-content, max-content));
+		min-width: 385px;
+	}
+	.container__right,
+	.third {
+		padding: 24px 0;
+	}
+}
+@media screen and (width > 400px) {
+	.container__main {
+		min-width: 460px;
+	}
+}
+@media screen and (width > 765px) {
+	.container__main {
+		min-width: 800px;
+	}
+}
