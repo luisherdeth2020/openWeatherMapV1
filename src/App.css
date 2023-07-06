@@ -26,6 +26,10 @@ h2 {
 	margin-top: 8px;
 }
 
+p{
+	color:#333;
+}
+
 .container {
 	margin: 0 auto;
 	margin-bottom: 32px;
@@ -36,13 +40,13 @@ h2 {
 	justify-content: center;
 }
 .container img {
-	height: 16px;
+	height: 19px;
 }
 
 input {
 	border: 1px #333 solid;
 	border-radius: 8px 0px 0px 8px;
-	padding: 10px;
+	padding: 12px;
 	outline: none;
 	border-right: none;
 	text-transform: capitalize;

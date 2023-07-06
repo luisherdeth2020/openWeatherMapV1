@@ -33,9 +33,7 @@ function App() {
           setWeatherInfo(data)
         }
       })
-      .catch(() => {
-        setError('No se encontró ninguna ubicación')
-      })
+      .catch((error) => { setError('No se encontró ninguna ubicación') })
       .finally(() => { setLoading(false) })
   };
 
@@ -105,8 +103,7 @@ function App() {
         </div>
       }
       {loading && <img src={sppiner} alt="Loading.." />}
-      {/* {error?.length && <p>{error}</p>} */}
-      {error !== '' && <p>{error}</p>}
+      {error?.length && <p>{error}</p>}
     </>
   )
 }
