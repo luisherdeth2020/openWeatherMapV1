@@ -103,7 +103,7 @@ function App() {
         </div>
       }
       {loading && <img src={sppiner} alt="Loading.." />}
-      {error?.length && <p>{error}</p>}
+      {error && <p className="errorInfo">{error}</p>}
     </>
   )
 }
